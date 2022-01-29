@@ -1,20 +1,23 @@
 import React from 'react';
-import Navbar from './Components/Navbar';
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Browse from './pages/Browse';
+import Order from './pages/Order';
 
-function App(){
-
-  return(
-    <div>      
+function App() {
+  return (
+    <>
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' />
+          <Route path='/' element={<Home />} />
+          <Route path='/browse' element={<Browse/>} />
+          <Route path='/order' element={<Order />} />
         </Routes>
       </Router>
-      <div><h1>hi</h1></div>
-    </div>
+    </>
   );
 }
 
